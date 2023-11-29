@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
-            $table->id();
-            $table->string("title");
-            $table->string("cover");
-            $table->text("content");
+        Schema::create('tenans', function (Blueprint $table) {
+            $table->bigIncrements('kode_tenan');
+            $table->string('nama_tenan');
+            $table->string('no_telp', 15);
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('tenans');
     }
 };

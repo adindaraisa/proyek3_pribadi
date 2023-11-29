@@ -54,8 +54,11 @@
                 <thead>
                     <tr>
                         <th class="text-center">No</th>
-                        <th class="text-center w-20">Nama Drop Point</th>
-                        <th class="text-center w-20">Alamat</th>
+                        <th class="text-center">Kode Barang</th>
+                        <th class="text-center w-20">Nama Barang</th>
+                        <th class="text-center w-20">Satuan</th>
+                        <th class="text-center w-20">Harga Satuan</th>
+                        <th class="text-center w-20">Stok</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
@@ -71,19 +74,23 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Tambah Drop Point</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Tambah Barang</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form action="{{route("drop-point.store")}}" method="post">
+          <form action="{{route("barang.store")}}" method="post">
             @csrf
             <div class="form-group">
-                <label for="exampleInputEmail1">Nama</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Drop Point" name="nama">
-                <label for="exampleInputEmail1">Alamat</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Alamat Drop Point" name="alamat">
+                <label for="exampleInputEmail1">Nama Barang</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Barang" name="nama_barang">
+                <label for="exampleInputEmail1">Satuan</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Satuan" name="satuan">
+                <label for="exampleInputEmail1">Harga Satuan</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Harga Satuan" name="harga_satuan">
+                <label for="exampleInputEmail1">Stok</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Stok" name="stok">
               </div>
 
         </div>
@@ -98,27 +105,33 @@
 
 
 
-  @foreach($data as $drop_point)
-  <div class="modal fade" id="exampleModal{{$drop_point->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{$drop_point->id}}" aria-hidden="true">
+  @foreach($data as $barang)
+  <div class="modal fade" id="exampleModal{{$barang->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{$barang->id}}" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel{{$drop_point->id}}">Update Drop Point</h5>
+                  <h5 class="modal-title" id="exampleModalLabel{{$barang->id}}">Update Barang</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
               <div class="modal-body">
-                  <form action="{{ route('drop-point.update', $drop_point->id) }}" method="post">
+                  <form action="{{ route('barang.update', $barang->id) }}" method="post">
                       @csrf
                       @method('PUT')
                       <div class="form-group">
-                            <label for="exampleInputEmail1">Nama</label>
+                            <label for="exampleInputEmail1">Nama Barang</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                              placeholder="Masukan Nama" name="nama" value="{{ $drop_point->nama }}">
-                            <label for="exampleInputEmail1">Alamat</label>
+                                placeholder="Masukan Nama" name="nama" value="{{ $barang->nama_barang }}">
+                            <label for="exampleInputEmail1">Satuan</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                  placeholder="Masukkan Alamat" name="alamat" value="{{ $drop_point->alamat }}">
+                                placeholder="Masukkan Satuan" name="satuan" value="{{ $barang->satuan }}">
+                            <label for="exampleInputEmail1">Harga Satuan</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="Masukkan Harga Satuan" name="harga_satuan" value="{{ $barang->harga_satuan }}">
+                            <label for="exampleInputEmail1">Stok</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="Masukkan Harga Satuan" name="harga_satuan" value="{{ $barang->stok }}">
                       </div>
               </div>
               <div class="modal-footer">
@@ -140,7 +153,7 @@
             "serverSide": true,
             "processing": true,
             "ajax": {
-                "url": "{{ route('drop-point-list') }}",
+                "url": "{{ route('barang-list') }}",
                 "dataType": "json",
                 "type": "POST",
                 "data": {
@@ -149,8 +162,11 @@
             },
             "columns": [
                 { "data": "id", "className": "text-center"},
-                { "data": "nama"},
-                { "data": "alamat"},
+                { "data": "kode_barang", "className": "text-center"},
+                { "data": "nama_barang"},
+                { "data": "satuan"},
+                { "data": "harga_satuan"},
+                { "data": "stok","className": "text-center"},
                 { "data": "options", "className": "text-center" }
             ],
         });

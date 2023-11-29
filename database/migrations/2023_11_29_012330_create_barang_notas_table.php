@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('poins', function (Blueprint $table) {
+        Schema::create('barang_notas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete("cascade");
-            $table->integer('jumlah_poin');
+            $table->foreignId('kode_nota')->nullable();
+            $table->foreign('kode_nota')->references('kode_nota')->on('notas')->onDelete("cascade");
+            $table->string('kode_barang')->nullable();
+            $table->foreign('kode_barang')->references('kode_barang')->on('barangs')->onDelete("cascade");
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('poins');
+        Schema::dropIfExists('barang_notas');
     }
 };

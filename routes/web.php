@@ -1,12 +1,15 @@
 <?php
 
 use App\Http\Controllers\AkunController;
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DropPointController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JenisSampahController;
+use App\Http\Controllers\KasirController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PenukaranPoinController;
 use App\Http\Controllers\PenukaranSampahController;
 use App\Http\Controllers\TagsController;
 use App\Models\JenisSampah;
@@ -46,15 +49,16 @@ Route::group(['prefix' => 'dashboard/admin'], function () {
     Route::resource('jenis/sampah', JenisSampahController::class);
     Route::post('/jenis/sampah-list', [JenisSampahController::class, 'getJenisSampah'])->name('sampah-list');
 
-    Route::resource('drop-point', DropPointController::class);
-    Route::post('/drop-point-list', [DropPointController::class, 'getDropPoint'])->name('drop-point-list');
+    Route::resource('barang', BarangController::class);
+    Route::post('/barang-list', [BarangController::class, 'getBarang'])->name('barang-list');
 
-    Route::resource('penukaran-poin', PenukaranPoin::class);
-    Route::post('/penukaran-poin-list', [PenukaranPoin::class, 'getPenukaranPoin'])->name('penukaran-poin-list');
+    Route::resource('riwayat-penukaran-poin', PenukaranPoinController::class);
+    Route::post('/riwayat-penukaran-poin-list', [PenukaranPoinController::class, 'getPenukaranPoin'])->name('penukaran-poin-list');
 
     Route::resource('news-category', TagsController::class);
     Route::post('/news-category-list', [TagsController::class, 'getNewsCategory'])->name('news-category-list');
 
-    Route::resource('riwayat-penukaran-sampah', PenukaranSampahController::class);
-    Route::post('/riwayat-penukaran-sampah-list', [PenukaranSampahController::class, 'getPenukaranSampah'])->name('penukaran-sampah-list');
+    Route::resource('riwayat-penukaran-sampah', KasirController::class);
+    Route::post('/riwayat-penukaran-sampah-list', [KasirController::class, 'getKasir'])->name('riwayat-penukaran-sampah-list');
+
 });

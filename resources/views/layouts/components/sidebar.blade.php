@@ -36,9 +36,9 @@ $links = [
                 "section_href" => route('riwayat-penukaran-sampah.index')
             ],
             [
-                "section_text" => "Penukaran Point",
+                "section_text" => "Penukaran Poin",
                 "section_icon" => "far fa-circle",
-                "section_href" => route('users.create')
+                "section_href" => route('riwayat-penukaran-poin.index')
             ]
         ]
     ],
@@ -72,8 +72,8 @@ $links = [
         "is_multi" => false
     ],
     [
-        "href" => route('drop-point.index'),
-        "text" => "Kelola Drop Point",
+        "href" => route('barang.index'),
+        "text" => "Kelola Barang",
         "icon" => "fas fa-circle",
         "is_multi" => false
     ],

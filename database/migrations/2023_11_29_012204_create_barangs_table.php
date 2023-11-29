@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
-            $table->id();
-            $table->string("nama");
+        Schema::create('barangs', function (Blueprint $table) {
+            $table->id(); // This is a standard auto-incrementing primary key
+            $table->string('kode_barang')->unique(); // Unique constraint to ensure uniqueness
+            $table->string('nama_barang');
+            $table->string('satuan');
+            $table->integer('harga_satuan');
+            $table->integer('stok');
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('barangs');
     }
 };
