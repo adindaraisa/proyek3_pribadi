@@ -48,3 +48,4 @@ Saya menerima dengan baik kontribusi kamu untuk project starter ini.
 Dukung aku [https://saweria.co/afrizalmy](https://saweria.co/afrizalmy)
 # TrashTreasure
 # TrashTreasure
+# proyek3_asesmen
