@@ -12,7 +12,7 @@ class KasirController extends Controller
     {
         $title = 'Data Kasir';
         $data = Kasir::all(); // or any other method to get the data
-        return view('page.admin.riwayat.penukaranSampah', compact('title', 'data'));
+        return view('page.admin.riwayat.kasir', compact('title', 'data'));
     }
 
     public function getKasir(Request $request)

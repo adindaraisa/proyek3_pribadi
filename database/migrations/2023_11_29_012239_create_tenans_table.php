@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tenans', function (Blueprint $table) {
-            $table->bigIncrements('kode_tenan');
+            $table->id(); // This is a standard auto-incrementing primary key
+            $table->string('kode_tenan')->unique(); // Unique constraint to ensure uniqueness
             $table->string('nama_tenan');
             $table->string('no_telp', 15);
             $table->timestamps();

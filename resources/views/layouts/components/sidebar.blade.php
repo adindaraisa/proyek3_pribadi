@@ -7,70 +7,35 @@ $links = [
         "is_multi" => false
     ],
     [
-        "text" => "Kelola Akun",
-        "icon" => "fas fa-users",
-        "is_multi" => true,
-        "href" => [
-            [
-                "section_text" => "Data Akun",
-                "section_icon" => "far fa-circle",
-                "section_href" => route('users.index')
-            ],
-            [
-                "section_text" => "Tambah Akun",
-                "section_icon" => "far fa-circle",
-                "section_href" => route('users.create')
-            ]
-        ]
-    ],
-
-
-    [
-        "text" => "Riwayat",
-        "icon" => "fas fa-history",
-        "is_multi" => true,
-        "href" => [
-            [
-                "section_text" => "Penukaran Sampah",
-                "section_icon" => "far fa-circle",
-                "section_href" => route('riwayat-penukaran-sampah.index')
-            ],
-            [
-                "section_text" => "Penukaran Poin",
-                "section_icon" => "far fa-circle",
-                "section_href" => route('riwayat-penukaran-poin.index')
-            ]
-        ]
-    ],
-    [
-        "text" => "Kelola News",
-        "icon" => "fas fa-newspaper",
-        "is_multi" => true,
-        "href" => [
-            [
-                "section_text" => "News",
-                "section_icon" => "far fa-circle",
-                "section_href" => route('news.index')
-            ],
-            [
-                "section_text" => "Tambah News",
-                "section_icon" => "far fa-circle",
-                "section_href" => route('news.create')
-            ]
-        ]
-    ],
-    [
-        "text" => "Kelola Tags",
-        "icon" => "fas fa-newspaper",
-        "is_multi" => false,
-        "href" => route('news-category.index')
-    ],
-    [
-        "href" => route('sampah.index'),
-        "text" => "Kelola Jenis Sampah",
-        "icon" => "fas fa-trash",
+        "text" => "Kasir",
+        "icon" => "far fa-circle",
+        "href" => route('kasir.index'),
         "is_multi" => false
     ],
+    [
+        "text" => "Tenan",
+        "icon" => "far fa-circle",
+        "href" => route('tenan.index'),
+        "is_multi" => false
+    ],
+    // [
+    //     "text" => "Kelola News",
+    //     "icon" => "fas fa-newspaper",
+    //     "is_multi" => true,
+    //     "href" => [
+    //         [
+    //             "section_text" => "News",
+    //             "section_icon" => "far fa-circle",
+    //             "section_href" => route('news.index')
+    //         ],
+    //         [
+    //             "section_text" => "Tambah News",
+    //             "section_icon" => "far fa-circle",
+    //             "section_href" => route('news.create')
+    //         ]
+    //     ]
+    // ],
+
     [
         "href" => route('barang.index'),
         "text" => "Kelola Barang",

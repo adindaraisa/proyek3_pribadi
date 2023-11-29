@@ -12,6 +12,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PenukaranPoinController;
 use App\Http\Controllers\PenukaranSampahController;
 use App\Http\Controllers\TagsController;
+use App\Http\Controllers\TenanController;
 use App\Models\JenisSampah;
 use App\Models\PenukaranPoin;
 
@@ -43,22 +44,14 @@ Route::group(['prefix' => 'dashboard/admin'], function () {
     Route::resource('users', AkunController::class);
     Route::post('/users-list', [AkunController::class, 'getUsersData'])->name('users-list');
 
-    Route::resource('news', NewsController::class);
-    Route::post('/news-list', [NewsController::class, 'getNewsData'])->name('news-list');
-
-    Route::resource('jenis/sampah', JenisSampahController::class);
-    Route::post('/jenis/sampah-list', [JenisSampahController::class, 'getJenisSampah'])->name('sampah-list');
-
     Route::resource('barang', BarangController::class);
     Route::post('/barang-list', [BarangController::class, 'getBarang'])->name('barang-list');
 
-    Route::resource('riwayat-penukaran-poin', PenukaranPoinController::class);
-    Route::post('/riwayat-penukaran-poin-list', [PenukaranPoinController::class, 'getPenukaranPoin'])->name('penukaran-poin-list');
+    Route::resource('tenan', TenanController::class);
+    Route::post('/tenan-list', [TenanController::class, 'getTenan'])->name('tenan-list');
 
-    Route::resource('news-category', TagsController::class);
-    Route::post('/news-category-list', [TagsController::class, 'getNewsCategory'])->name('news-category-list');
 
-    Route::resource('riwayat-penukaran-sampah', KasirController::class);
-    Route::post('/riwayat-penukaran-sampah-list', [KasirController::class, 'getKasir'])->name('riwayat-penukaran-sampah-list');
+    Route::resource('kasir', KasirController::class);
+    Route::post('/kasir', [KasirController::class, 'getKasir'])->name('kasir-list');
 
 });

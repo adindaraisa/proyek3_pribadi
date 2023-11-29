@@ -45,8 +45,8 @@
                 <thead>
                     <tr>
                         <th class="text-center">No</th>
-                        <th class="text-center">Kode Kasir</th>
-                        <th class="text-center w-25">Nama Kasir</th>
+                        <th class="text-center">Kode Tenan</th>
+                        <th class="text-center w-25">Nama Tenan</th>
                         <th class="text-center">No Telepon</th>
                     </tr>
                 </thead>
@@ -66,7 +66,7 @@
             "serverSide": true,
             "processing": true,
             "ajax": {
-                "url": "{{ route('riwayat-penukaran-sampah-list') }}",
+                "url": "{{ route('tenan-list') }}",
                 "dataType": "json",
                 "type": "POST",
                 "data": {
@@ -75,8 +75,8 @@
             },
             "columns": [
                 { "data": "id", "className": "text-center"},
-                { "data": "kode_kasir", "className": "text-center"},
-                { "data": "nama_kasir"},
+                { "data": "kode_tenan", "className": "text-center"},
+                { "data": "nama_tenan"},
                 { "data": "no_telp", "className": "text-center" },
             ],
         });

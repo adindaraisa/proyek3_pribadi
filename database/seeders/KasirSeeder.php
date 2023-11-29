@@ -18,16 +18,14 @@ class KasirSeeder extends Seeder
         DB::table('kasirs')->truncate();
         DB::table('kasirs')->insert([
             [
-                'nama_kasir'   => 'Resa',
-                'no_telp' => '08990918911'
+                'kode_kasir' => 'KS03501',
+                'nama_kasir'   => 'Ani Adinda',
+                'no_telp' => '08221511035375'
             ],
             [
-                'nama_kasir'   => 'Wulan',
-                'no_telp' => '08990918911'
-            ],
-            [
-                'nama_kasir'   => 'Alya',
-                'no_telp' => '08990918911'
+                'kode_kasir' => 'KS03502',
+                'nama_kasir'   => 'Budi Adinda',
+                'no_telp' => '08221511035375'
             ],
         ]);
     }

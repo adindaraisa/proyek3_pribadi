@@ -14,10 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('notas', function (Blueprint $table) {
-            $table->bigIncrements('kode_nota');
-            $table->foreignId('kode_tenan')->nullable();
+            $table->id();
+            $table->string('kode_nota')->unique();
+            $table->string('kode_tenan')->nullable();
             $table->foreign('kode_tenan')->references('kode_tenan')->on('tenans')->onDelete("cascade");
-            $table->foreignId('kode_kasir')->nullable();
+            $table->string('kode_kasir')->nullable();
             $table->foreign('kode_kasir')->references('kode_kasir')->on('kasirs')->onDelete("cascade");
             $table->date('tgl_nota');
             $table->time('jam_nota');

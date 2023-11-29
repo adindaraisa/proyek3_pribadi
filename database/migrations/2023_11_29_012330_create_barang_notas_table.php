@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('barang_notas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kode_nota')->nullable();
+            $table->string('kode_nota')->nullable();
             $table->foreign('kode_nota')->references('kode_nota')->on('notas')->onDelete("cascade");
             $table->string('kode_barang')->nullable();
             $table->foreign('kode_barang')->references('kode_barang')->on('barangs')->onDelete("cascade");

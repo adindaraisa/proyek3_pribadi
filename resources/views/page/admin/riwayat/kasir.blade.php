@@ -1,5 +1,5 @@
 @extends('layouts.base_admin.base_dashboard')
-@section('judul', 'Penukaran Poin')
+@section('judul', 'NEWS')
 @section('script_head')
 @endsection
 
@@ -45,9 +45,9 @@
                 <thead>
                     <tr>
                         <th class="text-center">No</th>
-                        <th class="text-center w-25">Nama Pembuang Sampah</th>
-                        <th class="text-center">Jumlah Poin</th>
-                        <th class="text-center">Jumlah Uang</th>
+                        <th class="text-center">Kode Kasir</th>
+                        <th class="text-center w-25">Nama Kasir</th>
+                        <th class="text-center">No Telepon</th>
                     </tr>
                 </thead>
             </table>
@@ -66,7 +66,7 @@
             "serverSide": true,
             "processing": true,
             "ajax": {
-                "url": "{{ route('penukaran-poin-list') }}",
+                "url": "{{ route('kasir-list') }}",
                 "dataType": "json",
                 "type": "POST",
                 "data": {
@@ -75,10 +75,9 @@
             },
             "columns": [
                 { "data": "id", "className": "text-center"},
-                { "data": "user_id", "className": "text-center" },
-                { "data": "jumlah_sampah"
-                },
-                { "data": "jumlah_point", "className": "text-center" },
+                { "data": "kode_kasir", "className": "text-center"},
+                { "data": "nama_kasir"},
+                { "data": "no_telp", "className": "text-center" },
             ],
         });
     });
